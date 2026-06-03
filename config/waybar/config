@@ -1,0 +1,58 @@
+{
+  "layer": "bot",
+  "spacing": 0,
+  "height": 0,
+  "margin-bottom": 0,
+  "margin-top": 15,
+  "position": "top",
+  "margin-right": 12,
+  "margin-left": 12,
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "memory",
+    "network",
+    "pulseaudio",
+    "custom/resetbutton",
+    "custom/powerbutton",
+  ],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+  "clock": {
+    "format": "{:%Y/%m/%d %A %T}",
+    "interval": 1,
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{used}Gib",
+    "interval": 5,
+    "tooltip": false
+  },
+  "network": {
+    "format-ethernet": "{bandwidthDownBits} | {bandwidthUpBits}",
+    "format-disconnected": "No Network",
+    "interval": 5,
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "scroll-step": 1,
+    "max-volume": 150,
+    "format": "{volume}%",
+    "nospacing": 1,
+    "on-click": "pavucontrol",
+    "tooltip": false
+  },
+  "custom/powerbutton": {
+    "format": "Shutdown",
+    "on-click": "shutdown now",
+    "tooltip": false
+  },
+  "custom/resetbutton": {
+    "format": "Reload",
+    "on-click": "swaymsg reload",
+    "tooltip": false
+  }
+}
